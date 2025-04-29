@@ -1,0 +1,98 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - salut
+    - bonjour
+    - hello
+    - bonsoir
+    - hey
+
+- intent: goodbye
+  examples: |
+    - au revoir
+    - à bientôt
+    - à la prochaine
+    - bonne journée
+    - bye
+
+- intent: affirm
+  examples: |
+    - oui
+    - bien sûr
+    - en effet
+    - c'est correct
+    - exactement
+
+- intent: deny
+  examples: |
+    - non
+    - jamais
+    - je ne pense pas
+    - ce n'est pas correct
+    - pas du tout
+
+- intent: provide_experience
+  examples: |
+    - J'ai [3](experience_years) ans d'expérience
+    - [5](experience_years) ans dans le domaine
+    - Je travaille dans ce secteur depuis [2](experience_years) ans
+    - Mon expérience est de [4.5](experience_years) années
+    - [10](experience_years) ans d'expérience professionnelle
+
+- intent: provide_skills
+  examples: |
+    - Je maîtrise [Python](skill), [JavaScript](skill) et [SQL](skill)
+    - Mes compétences incluent [React](skill), [Node.js](skill) et [MongoDB](skill)
+    - Je suis spécialisé en [machine learning](skill) et [deep learning](skill)
+    - Je connais bien [Java](skill), [Spring](skill) et [Hibernate](skill)
+    - Je suis expert en [DevOps](skill) avec [Docker](skill) et [Kubernetes](skill)
+
+- intent: provide_education
+  examples: |
+    - J'ai un [Master](education_level) en [Informatique](education_field)
+    - [Licence](education_level) en [Génie logiciel](education_field)
+    - Diplômé d'une [école d'ingénieurs](education_level) en [Intelligence artificielle](education_field)
+    - J'ai fait un [Doctorat](education_level) en [Science des données](education_field)
+    - Formation [BTS](education_level) en [Développement web](education_field)
+
+- intent: provide_motivation
+  examples: |
+    - Je suis motivé par les défis techniques que propose votre entreprise
+    - Ce poste correspond parfaitement à mon projet professionnel
+    - J'admire votre culture d'entreprise et souhaite en faire partie
+    - Je suis passionné par le domaine dans lequel vous opérez
+    - Votre mission d'entreprise résonne avec mes valeurs personnelles
+
+- intent: ask_salary
+  examples: |
+    - Quel est le salaire proposé ?
+    - Quelle est la fourchette de rémunération ?
+    - Combien paie ce poste ?
+    - Pouvez-vous me donner des informations sur le salaire ?
+    - Quelle est la compensation financière ?
+
+- intent: ask_job_details
+  examples: |
+    - Pouvez-vous me donner plus de détails sur le poste ?
+    - Quelles sont les responsabilités exactes ?
+    - En quoi consiste le travail au quotidien ?
+    - Quelles technologies utiliserez-vous ?
+    - Quelle est la taille de l'équipe ?
+
+- intent: ask_company_info
+  examples: |
+    - Pouvez-vous me parler de l'entreprise ?
+    - Depuis quand l'entreprise existe-t-elle ?
+    - Combien d'employés avez-vous ?
+    - Quelle est la culture d'entreprise ?
+    - Quels sont les produits ou services de l'entreprise ?
+
+- intent: ask_next_steps
+  examples: |
+    - Quelles sont les prochaines étapes du processus ?
+    - Comment se poursuit le recrutement ?
+    - Quand pourrais-je espérer une réponse ?
+    - Y aura-t-il d'autres entretiens ?
+    - Quel est le délai pour prendre une décision ?

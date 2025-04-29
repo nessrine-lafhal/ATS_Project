@@ -1,0 +1,100 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - provide_experience
+  - provide_skills
+  - provide_education
+  - provide_motivation
+  - ask_salary
+  - ask_job_details
+  - ask_company_info
+  - ask_next_steps
+
+entities:
+  - experience_years
+  - skill
+  - education_level
+  - education_field
+  - salary_expectation
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  experience_years:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: experience_years
+  skills:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: skill
+  education_level:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: education_level
+  education_field:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: education_field
+  motivation:
+    type: text
+    mappings:
+    - type: from_text
+      intent: provide_motivation
+  salary_expectation:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: salary_expectation
+
+responses:
+  utter_greet:
+  - text: "Bonjour ! Je suis l'assistant de recrutement virtuel pour le poste de {job_title}. Comment vous appelez-vous ?"
+
+  utter_ask_experience:
+  - text: "Ravi de vous rencontrer, {name}. Combien d'années d'expérience avez-vous dans ce domaine ?"
+
+  utter_ask_skills:
+  - text: "Très bien. Quelles sont vos principales compétences techniques ?"
+
+  utter_ask_education:
+  - text: "Pouvez-vous me parler de votre formation ?"
+
+  utter_ask_motivation:
+  - text: "Qu'est-ce qui vous motive à postuler pour ce poste ?"
+
+  utter_answer_salary:
+  - text: "La fourchette de salaire pour ce poste est entre {salary_min} et {salary_max} euros selon l'expérience."
+
+  utter_answer_job_details:
+  - text: "Ce poste implique {job_description}. Les principales responsabilités incluent {job_responsibilities}."
+
+  utter_answer_company_info:
+  - text: "{company_name} est {company_description}."
+
+  utter_explain_next_steps:
+  - text: "Après cet entretien préliminaire, vos réponses seront analysées et, si votre profil correspond à nos besoins, vous serez contacté(e) pour un entretien avec un recruteur humain."
+
+  utter_goodbye:
+  - text: "Merci pour votre temps. Nous vous contacterons bientôt avec les prochaines étapes. Bonne journée !"
+
+  utter_submit:
+  - text: "Merci pour toutes ces informations. Récapitulons: vous avez {experience_years} ans d'expérience, vos principales compétences sont {skills}, et vous avez une formation en {education_field}. Est-ce correct ?"
+
+  utter_thanks:
+  - text: "Parfait ! J'ai toutes les informations dont j'ai besoin."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

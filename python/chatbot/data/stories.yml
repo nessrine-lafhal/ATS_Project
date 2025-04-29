@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_experience
+    entities:
+    - experience_years: "5"
+  - action: utter_ask_skills
+  - intent: provide_skills
+    entities:
+    - skill: "Python"
+    - skill: "Machine Learning"
+  - action: utter_ask_education
+  - intent: provide_education
+    entities:
+    - education_level: "Master"
+    - education_field: "Informatique"
+  - action: utter_ask_motivation
+  - intent: provide_motivation
+  - action: utter_submit
+  - intent: affirm
+  - action: utter_thanks
+  - action: utter_explain_next_steps
+  - action: utter_goodbye
+
+- story: ask about salary
+  steps:
+  - intent: ask_salary
+  - action: utter_answer_salary
+  - action: utter_ask_experience
+
+- story: ask about job details
+  steps:
+  - intent: ask_job_details
+  - action: utter_answer_job_details
+  - action: utter_ask_skills
+
+- story: ask about company
+  steps:
+  - intent: ask_company_info
+  - action: utter_answer_company_info
+  - action: utter_ask_motivation
+
+- story: ask about next steps
+  steps:
+  - intent: ask_next_steps
+  - action: utter_explain_next_steps
+  - action: utter_goodbye
